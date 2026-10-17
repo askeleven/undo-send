@@ -1,0 +1,58 @@
+{
+  "name": "@askeleven/undo-send",
+  "version": "0.1.0",
+  "description": "Give your agent an undo button. Holds each email, text or other action for a delay before it runs, with an undo link a person can press, and never sends one that was undone. Library, runner, CLI and undo-link server. Zero dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "AskEleven",
+  "homepage": "https://github.com/askeleven/undo-send",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/askeleven/undo-send.git"
+  },
+  "bugs": {
+    "url": "https://github.com/askeleven/undo-send/issues"
+  },
+  "keywords": [
+    "undo",
+    "undo-send",
+    "outbox",
+    "delayed-send",
+    "human-in-the-loop",
+    "email",
+    "sms",
+    "idempotency",
+    "ai-agents",
+    "agent-safety"
+  ],
+  "bin": {
+    "undo-send": "bin/cli.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "bin",
+    "src",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "build:types": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build:types && npm test"
+  },
+  "types": "types/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "typescript": "^5.9.3"
+  }
+}
