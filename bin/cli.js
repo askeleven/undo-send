@@ -3,6 +3,7 @@ import { parseArgs } from 'node:util'
 import { createOutbox, fileStore, createUndoServer, newSecret, STATUSES, UndoSendError, MIN_SECRET_LENGTH } from '../src/index.js'
 import { formatList, formatEntry } from '../src/report.js'
 import { VERSION } from '../src/version.js'
+import { starHint } from './star-hint.js'
 
 const DEFAULT_PORT = 8787
 const DEFAULT_HOST = '127.0.0.1'
@@ -239,6 +240,7 @@ function useColour(values) {
 main(process.argv.slice(2)).then(
   (code) => {
     process.exitCode = code
+    starHint('undo-send', code, process.argv.slice(2))
   },
   (error) => {
     process.stderr.write(`${error?.stack ?? error}\n`)
