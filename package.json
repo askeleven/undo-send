@@ -1,6 +1,6 @@
 {
   "name": "@askeleven/undo-send",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Give your agent an undo button. Holds each email, text or other action for a delay before it runs, with an undo link a person can press, and never sends one that was undone. Library, runner, CLI and undo-link server. Zero dependencies.",
   "type": "module",
   "license": "MIT",
